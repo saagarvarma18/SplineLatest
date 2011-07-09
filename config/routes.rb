@@ -1,4 +1,6 @@
 SplineLatest::Application.routes.draw do
+  resources :products
+
   resources :chats
 
   resources :comments

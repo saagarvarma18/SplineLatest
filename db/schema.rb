@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110614062528) do
+ActiveRecord::Schema.define(:version => 20110709022144) do
 
   create_table "chats", :force => true do |t|
     t.datetime "created_at"
@@ -25,6 +25,16 @@ ActiveRecord::Schema.define(:version => 20110614062528) do
     t.datetime "updated_at"
   end
 
+  create_table "photos", :force => true do |t|
+    t.integer  "product_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "data_file_name"
+    t.string   "data_content_type"
+    t.integer  "data_file_size"
+    t.datetime "data_updated_at"
+  end
+
   create_table "presentations", :force => true do |t|
     t.string   "ppt_url"
     t.string   "ppt_topic"
@@ -33,6 +43,11 @@ ActiveRecord::Schema.define(:version => 20110614062528) do
     t.string   "timeline"
     t.decimal  "ppt_number"
     t.decimal  "ppt_time"
+  end
+
+  create_table "products", :force => true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "videos", :force => true do |t|
